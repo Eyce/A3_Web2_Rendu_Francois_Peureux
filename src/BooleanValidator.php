@@ -11,4 +11,16 @@ namespace RenduFP\validatorLibrary;
 
 class BooleanValidator {
 
+    public function __construct()
+    {
+
+    }
+
+    public static function isTrue($boolean)
+    {
+        if($boolean)
+            return "True";
+        else
+            return "False";
+    }
 } 
