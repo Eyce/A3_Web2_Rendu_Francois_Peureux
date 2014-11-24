@@ -11,4 +11,17 @@ namespace RenduFP\validatorLibrary;
 
 class IntegerValidator {
 
+    public function __construct()
+    {
+
+    }
+
+    public static function equals($intValue, $equalsValue)
+    {
+        if ($intValue=$equalsValue)
+            return "True";
+        else
+            return "False";
+    }
+
 } 
