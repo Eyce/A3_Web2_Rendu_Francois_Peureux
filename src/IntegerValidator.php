@@ -16,9 +16,25 @@ class IntegerValidator {
 
     }
 
-    public static function equals($intValue, $equalsValue)
+    public static function equals($intValue, $testValue)
     {
-        if ($intValue=$equalsValue)
+        if ($intValue=$testValue)
+            return "True";
+        else
+            return "False";
+    }
+
+    public static function biggerThan($intValue, $testValue)
+    {
+        if($intValue>$testValue)
+            return "True";
+        else
+            return "False";
+    }
+
+    public static function smallerThan($intValue, $testValue)
+    {
+        if($intValue<$testValue)
             return "True";
         else
             return "False";

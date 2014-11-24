@@ -23,4 +23,12 @@ class BooleanValidator {
         else
             return "False";
     }
+
+    public static function isFalse($boolean)
+    {
+        if(!$boolean)
+            return "True";
+        else
+            return "False";
+    }
 } 
