@@ -11,4 +11,10 @@ namespace RenduFP\validatorLibrary;
 
 class StringValidator {
 
+    public function __construt()
+    {
+
+    }
+
+    
 } 

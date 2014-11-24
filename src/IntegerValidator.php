@@ -29,26 +29,56 @@ class IntegerValidator {
 
     public static function biggerThan($intValue, $testValue)
     {
-        if($intValue>$testValue)
-            return "True";
-        else
-            return "False";
+        if ($stricness = self::STRICT_INEQUALITY)
+        {
+            if ($intValue > $testValue)
+                return "True";
+            else
+                return "False";
+        }
+        else if ($stricness = self::NOT_STRICT_INEQUALITY)
+        {
+            if ($intValue >= $testValue)
+                return "True";
+            else
+                return "False";
+        }
     }
 
-    public static function smallerThan($intValue, $testValue)
+    public static function smallerThan($intValue, $testValue, $stricness = self::STRICT_INEQUALITY)
     {
-        if($intValue<$testValue)
-            return "True";
-        else
-            return "False";
+        if ($stricness = self::STRICT_INEQUALITY)
+        {
+            if ($intValue < $testValue)
+                return "True";
+            else
+                return "False";
+        }
+        else if ($stricness = self::NOT_STRICT_INEQUALITY)
+        {
+            if ($intValue <= $testValue)
+                return "True";
+            else
+                return "False";
+        }
     }
 
-    public static function between($intValue, $testValueMin, $testValueMax)
+    public static function between($intValue, $testValueMin, $testValueMax, $stricness = self::STRICT_INEQUALITY)
     {
-        if($intValue>$testValueMin && $intValue<$testValueMax)
-            return "True";
-        else
-            return "False";
+        if ($stricness = self::STRICT_INEQUALITY)
+        {
+            if($intValue>$testValueMin && $intValue<$testValueMax)
+                return "True";
+            else
+                return "False";
+        }
+        else if ($stricness = self::NOT_STRICT_INEQUALITY)
+        {
+            if($intValue>=$testValueMin && $intValue<=$testValueMax)
+                return "True";
+            else
+                return "False";
+        }
     }
 
     public static function isPositive($intValue, $strictness = self::STRICT_INEQUALITY)
