@@ -32,3 +32,8 @@ echo $validation = \RenduFP\validatorLibrary\StringValidator::noWhiteSpace("Hell
 
 echo $validation = \RenduFP\validatorLibrary\BooleanValidator::isTrue(true);
 echo $validation = \RenduFP\validatorLibrary\BooleanValidator::isFalse(true).PHP_EOL;
+
+/*
+ * Array Validation
+ */
+

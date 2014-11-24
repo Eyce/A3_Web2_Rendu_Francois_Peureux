@@ -10,5 +10,8 @@ namespace RenduFP\validatorLibrary;
 
 
 class ArrayValidator {
+    public function __construct()
+    {
 
+    }
 } 
