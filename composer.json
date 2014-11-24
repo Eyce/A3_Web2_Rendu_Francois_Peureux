@@ -1,0 +1,14 @@
+{
+    "minimum-stability": "stable",
+    "require": {
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "RenduFP\\validatorLibrary\\": "src"
+        }
+    },
+    "config": {
+    }
+}
