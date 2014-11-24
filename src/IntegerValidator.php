@@ -27,16 +27,16 @@ class IntegerValidator {
             return "False";
     }
 
-    public static function biggerThan($intValue, $testValue)
+    public static function biggerThan($intValue, $testValue, $strictness = self::STRICT_INEQUALITY)
     {
-        if ($stricness = self::STRICT_INEQUALITY)
+        if ($strictness = self::STRICT_INEQUALITY)
         {
             if ($intValue > $testValue)
                 return "True";
             else
                 return "False";
         }
-        else if ($stricness = self::NOT_STRICT_INEQUALITY)
+        else if ($strictness = self::NOT_STRICT_INEQUALITY)
         {
             if ($intValue >= $testValue)
                 return "True";
@@ -45,16 +45,16 @@ class IntegerValidator {
         }
     }
 
-    public static function smallerThan($intValue, $testValue, $stricness = self::STRICT_INEQUALITY)
+    public static function smallerThan($intValue, $testValue, $strictness = self::STRICT_INEQUALITY)
     {
-        if ($stricness = self::STRICT_INEQUALITY)
+        if ($strictness = self::STRICT_INEQUALITY)
         {
             if ($intValue < $testValue)
                 return "True";
             else
                 return "False";
         }
-        else if ($stricness = self::NOT_STRICT_INEQUALITY)
+        else if ($strictness = self::NOT_STRICT_INEQUALITY)
         {
             if ($intValue <= $testValue)
                 return "True";
@@ -63,16 +63,16 @@ class IntegerValidator {
         }
     }
 
-    public static function between($intValue, $testValueMin, $testValueMax, $stricness = self::STRICT_INEQUALITY)
+    public static function between($intValue, $testValueMin, $testValueMax, $strictness = self::STRICT_INEQUALITY)
     {
-        if ($stricness = self::STRICT_INEQUALITY)
+        if ($strictness = self::STRICT_INEQUALITY)
         {
             if($intValue>$testValueMin && $intValue<$testValueMax)
                 return "True";
             else
                 return "False";
         }
-        else if ($stricness = self::NOT_STRICT_INEQUALITY)
+        else if ($strictness = self::NOT_STRICT_INEQUALITY)
         {
             if($intValue>=$testValueMin && $intValue<=$testValueMax)
                 return "True";
