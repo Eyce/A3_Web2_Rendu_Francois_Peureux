@@ -29,52 +29,37 @@ class ArrayValidator {
     /**
      * @param array $arrayValue
      *
-     * @throws Exception Item to validate doesn't exist (array)
-     * @throws Exception Item to validate has the wrong type (must be array)
+     * @throws Exception Item must be array
      *
      * @return bool
      */
     public static function isEmpty($arrayValue)
     {
-        if (!isset($arrayValue))
-            throw new Exception("Item to validate doesn't exist (array)");
         if (!is_array($arrayValue))
-            throw new Exception("Item to validate has the wrong type (must be array)");
+            throw new Exception("Item must be array");
         
-        if (empty($arrayValue))
-            return true;
-        else
-            return false;
+        return (empty($arrayValue));
     }
 
     /**
      * @param array $arrayValue
      * @param int $elementNumber
      *
-     * @throws Exception Item to validate doesn't exist (array)
-     * @throws Exception Item to validate doesn't exist (int)
-     * @throws Exception Item to validate has the wrong type (must be array)
-     * @throws Exception Item to validate has the wrong type (must be int)
+     * @throws Exception Item must be array
+     * @throws Exception Item must be int
      *
      * @return bool
      */
     public static function hasSameElementNumber($arrayValue, $elementNumber)
     {
-        if (!isset($arrayValue))
-            throw new Exception("Item to validate doesn't exist (array)");
-        if (!isset($elementNumber))
-            throw new Exception("Comparison item doesn't exist (int)");
         if (!is_array($arrayValue))
-            throw new Exception("Item to validate has the wrong type (must be array)");
+            throw new Exception("Item must be array");
         if (!is_int($elementNumber))
-            throw new Exception("Comparison item has the wrong type (must be int)");
+            throw new Exception("Item must be int");
 
         $arrayLength = count($arrayValue);
 
-        if ($arrayLength == $elementNumber)
-            return true;
-        else
-            return false;
+        return ($arrayLength == $elementNumber);
     }
 
     /**
@@ -82,24 +67,18 @@ class ArrayValidator {
      * @param int $elementNumber
      * @param int $strictness
      *
-     * @throws Exception Item to validate doesn't exist (array)
-     * @throws Exception Item to validate doesn't exist (int)
-     * @throws Exception Item to validate has the wrong type (must be array)
-     * @throws Exception Item to validate has the wrong type (must be int)
+     * @throws Exception Item must be array
+     * @throws Exception Item must be int
      * @throws Exception Strictness argument invalid
      *
      * @return bool
      */
     public static function hasMoreElements($arrayValue, $elementNumber, $strictness = self::STRICT_INEQUALITY)
     {
-        if (!isset($arrayValue))
-            throw new Exception("Item to validate doesn't exist (array)");
-        if (!isset($elementNumber))
-            throw new Exception("Comparison item doesn't exist (int)");
         if (!is_array($arrayValue))
-            throw new Exception("Item to validate has the wrong type (must be array)");
+            throw new Exception("Item must be array");
         if (!is_int($elementNumber))
-            throw new Exception("Comparison item has the wrong type (must be int)");
+            throw new Exception("Item must be int");
         if ($strictness != self::STRICT_INEQUALITY && $strictness != self::NOT_STRICT_INEQUALITY)
             throw new Exception("Strictness argument invalid");
 
@@ -107,17 +86,11 @@ class ArrayValidator {
 
         if($strictness == self::STRICT_INEQUALITY)
         {
-            if ($arrayLength > $elementNumber)
-                return true;
-            else
-                return false;
+            return ($arrayLength > $elementNumber);
         }
         else if ($strictness == self::NOT_STRICT_INEQUALITY)
         {
-            if ($arrayLength >= $elementNumber)
-                return true;
-            else
-                return false;
+            return ($arrayLength >= $elementNumber);
         }
     }
 
@@ -126,24 +99,18 @@ class ArrayValidator {
      * @param int $elementNumberTest
      * @param int $strictness
      *
-     * @throws Exception Item to validate doesn't exist (array)
-     * @throws Exception Item to validate doesn't exist (int)
-     * @throws Exception Item to validate has the wrong type (must be array)
-     * @throws Exception Item to validate has the wrong type (must be int)
+     * @throws Exception Item must be array
+     * @throws Exception Item must be int
      * @throws Exception Strictness argument invalid
      *
      * @return bool
      */
-    public static function hasLessElements($arrayValue, $elementNumberTest, $strictness = self::STRICT_INEQUALITY)
+    public static function hasLessElements($arrayValue, $elementNumber, $strictness = self::STRICT_INEQUALITY)
     {
-        if (!isset($arrayValue))
-            throw new Exception("Item to validate doesn't exist (array)");
-        if (!isset($elementNumberTest))
-            throw new Exception("Comparison item doesn't exist (int)");
         if (!is_array($arrayValue))
-            throw new Exception("Item to validate has the wrong type (must be array)");
-        if (!is_int($elementNumberTest))
-            throw new Exception("Comparison item has the wrong type (must be int)");
+            throw new Exception("Item must be array");
+        if (!is_int($elementNumber))
+            throw new Exception("Item must be int");
         if ($strictness != self::STRICT_INEQUALITY && $strictness != self::NOT_STRICT_INEQUALITY)
             throw new Exception("Strictness argument invalid");
 
@@ -151,17 +118,11 @@ class ArrayValidator {
 
         if($strictness == self::STRICT_INEQUALITY)
         {
-            if ($arrayLength < $elementNumberTest)
-                return true;
-            else
-                return false;
+            return ($arrayLength < $elementNumber);
         }
         else if ($strictness == self::NOT_STRICT_INEQUALITY)
         {
-            if ($arrayLength <= $elementNumberTest)
-                return true;
-            else
-                return false;
+            return ($arrayLength <= $elementNumber);
         }
     }
 
@@ -171,33 +132,24 @@ class ArrayValidator {
      * @param int $elementNumberMax
      * @param int $strictness
      *
-     * @throws Exception Item to validate doesn't exist (array)
-     * @throws Exception Minimum comparison item doesn't exist (int)
-     * @throws Exception Maximum comparison item doesn't exist (int)
-     * @throws Exception Item to validate has the wrong type (must be array)
-     * @throws Exception Minimum comparison item has the wrong type (must be int)
-     * @throws Exception Maximum comparison item has the wrong type (must be int)
-     * @throws Exception Minimal comparative item bigger than Maximal comparative item
+     * @throws Exception Item must be array
+     * @throws Exception Item must be int
+     * @throws Exception Wrong order in items
      * @throws Exception Strictness argument invalid
      *
      * @return bool
      */
     public static function elementNumberBetween($arrayValue, $elementNumberMin, $elementNumberMax, $strictness = self::STRICT_INEQUALITY)
     {
-        if (!isset($arrayValue))
-            throw new Exception("Item to validate doesn't exist (array)");
-        if (!isset($elementNumberMin))
-            throw new Exception("Minimum comparison item doesn't exist (int)");
-        if (!isset($elementNumberMax))
-            throw new Exception("Maximum comparison item doesn't exist (int)");
+
         if (!is_array($arrayValue))
-            throw new Exception("Item to validate has the wrong type (must be array)");
+            throw new Exception("Item must be array");
         if (!is_int($elementNumberMin))
-            throw new Exception("Minimum comparison item has the wrong type (must be int)");
+            throw new Exception("Item must be int");
         if (!is_int($elementNumberMax))
-            throw new Exception("Maximum comparison item has the wrong type (must be int)");
+            throw new Exception("Item must be int");
         if ($elementNumberMin >= $elementNumberMax)
-            throw new Exception("Minimal comparative item bigger than Maximal comparative item");
+            throw new Exception("Wrong order in items");
         if ($strictness != self::STRICT_INEQUALITY && $strictness != self::NOT_STRICT_INEQUALITY)
             throw new Exception("Strictness argument invalid");
 
@@ -205,17 +157,11 @@ class ArrayValidator {
 
         if($strictness == self::STRICT_INEQUALITY)
         {
-            if ($arrayLength > $elementNumberMin && $arrayLength < $elementNumberMax)
-                return true;
-            else
-                return false;
+            return ($arrayLength > $elementNumberMin && $arrayLength < $elementNumberMax);
         }
         else if ($strictness == self::NOT_STRICT_INEQUALITY)
         {
-            if ($arrayLength >= $elementNumberMin && $arrayLength <= $elementNumberMax)
-                return true;
-            else
-                return false;
+            return ($arrayLength >= $elementNumberMin && $arrayLength <= $elementNumberMax);
         }
     }
 
@@ -223,49 +169,37 @@ class ArrayValidator {
      * @param array $arrayValue
      * @param mixed $key
      *
-     * @throws Exception Item to validate doesn't exist (array)
-     * @throws Exception Searched item doesn't exist (mixed)
-     * @throws Exception Item to validate has the wrong type (must be array)
+     * @throws Exception Key doesn't exist
+     * @throws Exception Item must be array
      *
      * @return bool
      */
     public static function containsKey($arrayValue, $key)
     {
-        if (!isset($arrayValue))
-            throw new Exception("Item to validate doesn't exist (array)");
         if (!isset($key))
-            throw new Exception("Searched item doesn't exist (mixed)");
+            throw new Exception("Key doesn't exist");
         if (!is_array($arrayValue))
-            throw new Exception("Item to validate has the wrong type (must be array)");
+            throw new Exception("Item must be array");
 
-        if(array_key_exists($key,$arrayValue))
-            return true;
-        else
-            return false;
+        return (array_key_exists($key,$arrayValue));
     }
 
     /**
      * @param array $arrayValue
      * @param mixed $value
      *
-     * @throws Exception Item to validate doesn't exist (array)
-     * @throws Exception Searched item doesn't exist (mixed)
-     * @throws Exception Item to validate has the wrong type (must be array)
+     * @throws Exception Value doesn't exist
+     * @throws Exception Item must be array
      *
      * @return bool
      */
     public static function containsValue($arrayValue, $value)
     {
-        if (!isset($arrayValue))
-            throw new Exception("Item to validate doesn't exist (array)");
         if (!isset($value))
-            throw new Exception("Searched item doesn't exist (mixed)");
+            throw new Exception("Value doesn't exist");
         if (!is_array($arrayValue))
-            throw new Exception("Item to validate has the wrong type (must be array)");
+            throw new Exception("Item must be array");
 
-        if(in_array($value, $arrayValue))
-            return true;
-        else
-            return false;
+        return (in_array($value, $arrayValue));
     }
 } 
