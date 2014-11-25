@@ -397,12 +397,183 @@ bool containsValue(array $arrayValue, mixed $value)
 Validates an DateTime object, by performing the following tests :
 
 ###isYear
+
+Tests if a DateTime fits a given year.
+
+**Syntax**
+
+```php
+bool isYear(DateTime $dateValue, int $testYear)
+```
+
+**Examples**
+
+```php
+//Tests if $dateTest year is 2012
+\RenduFP\validatorLibrary\DateTimeValidator::isYear($dateTest, 2012)
+```
+
 ###isMonth
+
+Tests if a DateTime fits a given month.
+
+**Syntax**
+
+```php
+bool isMonth(DateTime $dateValue, string $testMonth)
+```
+
+**Examples**
+
+```php
+//Tests if $dateTest month is July
+\RenduFP\validatorLibrary\DateTimeValidator::isYear($dateTest, "Jul")
+```
+
 ###isDay
+
+Tests if a DateTime fits a given day.
+
+**Syntax**
+
+```php
+bool isDay(DateTime $dateValue, int $testDay)
+```
+
+**Examples**
+
+```php
+//Tests if $dateTest day is Sunday
+\RenduFP\validatorLibrary\DateTimeValidator::isYear($dateTest, "Sun")
+```
+
 ###isSameDay
+
+Tests if two DateTime are one the same day.
+
+**Syntax**
+
+```php
+bool isSameDay(DateTime $dateValue, DateTime $dateCompare)
+```
+
+**Examples**
+
+```php
+//Tests if $dateTest is the same as $dateComp
+\RenduFP\validatorLibrary\DateTimeValidator::isSameDay($dateTest, $dateComp)
+```
+
 ###isAfter
+
+Tests if a DateTime is after another given DateTime.
+
+**Syntax**
+
+```php
+bool isAfter(DateTime $dateValue, DateTime $dateCompare, [int $strictness = self::STRICT_INEQUALITY])
+```
+
+**Examples**
+
+```php
+//Tests if $dateTest is strictly after $dateComp
+\RenduFP\validatorLibrary\DateTimeValidator::isAfter($dateTest, $dateComp)
+\RenduFP\validatorLibrary\DateTimeValidator::isAfter($dateTest, $dateComp, RenduFP\validatorLibrary\DateTimeValidator::STRICT_INEQUALITY)
+//Tests if $dateTest is equals or after $dateComp
+\RenduFP\validatorLibrary\DateTimeValidator::isAfter($dateTest, $dateComp, RenduFP\validatorLibrary\DateTimeValidator::NOT_STRICT_INEQUALITY)
+```
+
 ###isBefore
+
+Tests if a DateTime is before another given DateTime.
+
+**Syntax**
+
+```php
+bool isBefore(DateTime $dateValue, DateTime $dateCompare, [int $strictness = self::STRICT_INEQUALITY])
+```
+
+**Examples**
+
+```php
+//Tests if $dateTest is strictly before $dateComp
+\RenduFP\validatorLibrary\DateTimeValidator::isBefore($dateTest, $dateComp)
+\RenduFP\validatorLibrary\DateTimeValidator::isBefore($dateTest, $dateComp, RenduFP\validatorLibrary\DateTimeValidator::STRICT_INEQUALITY)
+//Tests if $dateTest is equals or before $dateComp
+\RenduFP\validatorLibrary\DateTimeValidator::isBefore($dateTest, $dateComp, RenduFP\validatorLibrary\DateTimeValidator::NOT_STRICT_INEQUALITY)
+```
+
 ###isToday
+
+Tests if a DateTime is today.
+
+**Syntax**
+
+```php
+bool isToday(DateTime $dateValue)
+```
+
+**Examples**
+
+```php
+//Tests if $dateTest is today
+\RenduFP\validatorLibrary\DateTimeValidator::isToday($dateTest)
+```
+
 ###isBeforeToday
+
+Tests if a DateTime is before today.
+
+**Syntax**
+
+```php
+bool isAfterToday(DateTime $dateValue, [int $strictness = self::STRICT_INEQUALITY])
+```
+
+**Examples**
+
+```php
+//Tests if $dateTest is strictly before today
+\RenduFP\validatorLibrary\DateTimeValidator::isBeforeToday($dateTest)
+\RenduFP\validatorLibrary\DateTimeValidator::isBeforeToday($dateTest, RenduFP\validatorLibrary\DateTimeValidator::STRICT_INEQUALITY)
+//Tests if $dateTest is today or before
+\RenduFP\validatorLibrary\DateTimeValidator::isBeforeToday($dateTest, RenduFP\validatorLibrary\DateTimeValidator::NOT_STRICT_INEQUALITY)
+```
+
 ###isAfterToday
+
+Tests if a DateTime is after today.
+
+**Syntax**
+
+```php
+bool isAfterToday(DateTime $dateValue, [int $strictness = self::STRICT_INEQUALITY])
+```
+
+**Examples**
+
+```php
+//Tests if $dateTest is strictly after today
+\RenduFP\validatorLibrary\DateTimeValidator::isAfterToday($dateTest)
+\RenduFP\validatorLibrary\DateTimeValidator::isAfterToday($dateTest, RenduFP\validatorLibrary\DateTimeValidator::STRICT_INEQUALITY)
+//Tests if $dateTest is today or after
+\RenduFP\validatorLibrary\DateTimeValidator::isAfterToday($dateTest, RenduFP\validatorLibrary\DateTimeValidator::NOT_STRICT_INEQUALITY)
+```
+
 ###hasSameTimezone
+
+Tests if a DateTime timezone is the same as a given Parameter.
+
+**Syntax**
+
+```php
+bool hasSameTimezone(DateTime $dateValue, DateTimeZone $timeZoneTest)
+```
+
+**Examples**
+
+```php
+//Tests if $dateTest timezone is "Europe/Paris"
+\RenduFP\validatorLibrary\DateTimeValidator::hasSameTimezone($dateTest, new DateTimeZone('Europe/Paris'))
+```
