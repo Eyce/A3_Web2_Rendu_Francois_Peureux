@@ -11,6 +11,8 @@ This library validates several types of data :
 *   Array
 *   DateTime
 
+*Several examples can be found commented in the index.php file.*
+
 ##Integer Validation
 
 Validates an Integer, by performing the following tests :

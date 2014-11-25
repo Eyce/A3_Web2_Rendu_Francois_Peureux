@@ -6,6 +6,8 @@
 
 require __DIR__.'/vendor/autoload.php';
 
+/*
+
 // VARIABLE DEFINITION
 
 $intTest = 5 ;
@@ -24,7 +26,7 @@ $dateTest = new DateTime("2012-07-08 11:14:15", new DateTimeZone('Europe/Paris')
 // INTEGER VALIDATION
 
 echo $validation = \RenduFP\validatorLibrary\IntegerValidator::isEqual($intTest, 8);
-echo $validation = \RenduFP\validatorLibrary\IntegerValidator::isBiggerThan($intTest, 8);
+echo $validation = \RenduFP\validatorLibrary\IntegerValidator::isBiggerThan($intTest, 8, RenduFP\validatorLibrary\IntegerValidator::STRICT_INEQUALITY);
 echo $validation = \RenduFP\validatorLibrary\IntegerValidator::isSmallerThan($intTest, 8);
 echo $validation = \RenduFP\validatorLibrary\IntegerValidator::isBetween($intTest, 1, 10).'<br />';
 
@@ -64,3 +66,5 @@ echo $validation = \RenduFP\validatorLibrary\DateTimeValidator::isToday($dateTes
 echo $validation = \RenduFP\validatorLibrary\DateTimeValidator::isBeforeToday($dateTest);
 echo $validation = \RenduFP\validatorLibrary\DateTimeValidator::isAfterToday($dateTest, RenduFP\validatorLibrary\DateTimeValidator::STRICT_INEQUALITY);
 echo $validation = \RenduFP\validatorLibrary\DateTimeValidator::hasSameTimezone($dateTest, new DateTimeZone('Europe/Paris')).'<br />';
+
+*/
