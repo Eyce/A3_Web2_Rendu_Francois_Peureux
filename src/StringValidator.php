@@ -32,7 +32,7 @@ class StringValidator {
      *
      * @return string
      */
-    public static function strLengthEquals($strValue, $testValue)
+    public static function lengthEquals($strValue, $testValue)
     {
         $strValueLength = mb_strlen($strValue);
 
@@ -49,7 +49,7 @@ class StringValidator {
      *
      * @return string
      */
-    public static function strLengthBigger($strValue, $testValue, $strictness = self::STRICT_INEQUALITY)
+    public static function lengthBigger($strValue, $testValue, $strictness = self::STRICT_INEQUALITY)
     {
         if ($strictness == self::STRICT_INEQUALITY)
         {
@@ -74,7 +74,7 @@ class StringValidator {
      *
      * @return string
      */
-    public static function strLengthSmaller($strValue, $testValue, $strictness = self::STRICT_INEQUALITY)
+    public static function lengthSmaller($strValue, $testValue, $strictness = self::STRICT_INEQUALITY)
     {
         if ($strictness == self::STRICT_INEQUALITY)
         {
@@ -100,7 +100,7 @@ class StringValidator {
      *
      * @return string
      */
-    public static function strLengthBetween($strValue, $testValueMin, $testValueMax, $strictness = self::STRICT_INEQUALITY)
+    public static function lengthBetween($strValue, $testValueMin, $testValueMax, $strictness = self::STRICT_INEQUALITY)
     {
         if ($strictness == self::STRICT_INEQUALITY)
         {

@@ -32,7 +32,7 @@ class IntegerValidator {
      *
      * @return string
      */
-    public static function equals($intValue, $testValue)
+    public static function isEqual($intValue, $testValue = 0)
     {
         if ($intValue == $testValue)
             return "True";
@@ -47,7 +47,7 @@ class IntegerValidator {
      *
      * @return string
      */
-    public static function biggerThan($intValue, $testValue, $strictness = self::STRICT_INEQUALITY)
+    public static function isBiggerThan($intValue, $testValue = 0, $strictness = self::STRICT_INEQUALITY)
     {
         if ($strictness == self::STRICT_INEQUALITY)
         {
@@ -72,7 +72,7 @@ class IntegerValidator {
      *
      * @return string
      */
-    public static function smallerThan($intValue, $testValue, $strictness = self::STRICT_INEQUALITY)
+    public static function isSmallerThan($intValue, $testValue = 0, $strictness = self::STRICT_INEQUALITY)
     {
         if ($strictness == self::STRICT_INEQUALITY)
         {
@@ -98,7 +98,7 @@ class IntegerValidator {
      *
      * @return string
      */
-    public static function between($intValue, $testValueMin, $testValueMax, $strictness = self::STRICT_INEQUALITY)
+    public static function isBetween($intValue, $testValueMin, $testValueMax, $strictness = self::STRICT_INEQUALITY)
     {
         if ($strictness == self::STRICT_INEQUALITY)
         {
@@ -110,54 +110,6 @@ class IntegerValidator {
         else if ($strictness == self::NOT_STRICT_INEQUALITY)
         {
             if($intValue>=$testValueMin && $intValue<=$testValueMax)
-                return "True";
-            else
-                return "False";
-        }
-    }
-
-    /**
-     * @param int $intValue
-     * @param int $strictness
-     *
-     * @return string
-     */
-    public static function isPositive($intValue, $strictness = self::STRICT_INEQUALITY)
-    {
-        if ($strictness == self::STRICT_INEQUALITY)
-        {
-            if($intValue>0)
-                return "True";
-            else
-                return "False";
-        }
-        else if($strictness == self::NOT_STRICT_INEQUALITY)
-        {
-            if($intValue>=0)
-                return "True";
-            else
-                return "False";
-        }
-    }
-
-    /**
-     * @param int $intValue
-     * @param int $strictness
-     *
-     * @return string
-     */
-    public static function isNegative($intValue, $strictness = self::STRICT_INEQUALITY)
-    {
-        if ($strictness == self::STRICT_INEQUALITY)
-        {
-            if($intValue<0)
-                return "True";
-            else
-                return "False";
-        }
-        else if($strictness == self::NOT_STRICT_INEQUALITY)
-        {
-            if($intValue<=0)
                 return "True";
             else
                 return "False";

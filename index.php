@@ -21,22 +21,19 @@ $arrayTest = array
                     );
 $dateTest = new DateTime("2012-07-08 11:14:15", new DateTimeZone('Europe/Paris'));
 
-
 // INTEGER VALIDATION
 
-echo $validation = \RenduFP\validatorLibrary\IntegerValidator::equals($intTest, 8);
-echo $validation = \RenduFP\validatorLibrary\IntegerValidator::biggerThan($intTest, 8);
-echo $validation = \RenduFP\validatorLibrary\IntegerValidator::smallerThan($intTest, 8);
-echo $validation = \RenduFP\validatorLibrary\IntegerValidator::between($intTest, 1, 10);
-echo $validation = \RenduFP\validatorLibrary\IntegerValidator::isPositive($intTest);
-echo $validation = \RenduFP\validatorLibrary\IntegerValidator::isNegative($intTest,RenduFP\validatorLibrary\IntegerValidator::NOT_STRICT_INEQUALITY).PHP_EOL;
+echo $validation = \RenduFP\validatorLibrary\IntegerValidator::isEqual($intTest, 8);
+echo $validation = \RenduFP\validatorLibrary\IntegerValidator::isBiggerThan($intTest, 8);
+echo $validation = \RenduFP\validatorLibrary\IntegerValidator::isSmallerThan($intTest, 8);
+echo $validation = \RenduFP\validatorLibrary\IntegerValidator::isBetween($intTest, 1, 10);
 
 // STRING VALIDATION
 
-echo $validation = \RenduFP\validatorLibrary\StringValidator::strLengthEquals($stringTest, 10);
-echo $validation = \RenduFP\validatorLibrary\StringValidator::strLengthBigger($stringTest, 5);
-echo $validation = \RenduFP\validatorLibrary\StringValidator::strLengthSmaller($stringTest, 87);
-echo $validation = \RenduFP\validatorLibrary\StringValidator::strLengthBetween($stringTest, 1, 15);
+echo $validation = \RenduFP\validatorLibrary\StringValidator::lengthEquals($stringTest, 10);
+echo $validation = \RenduFP\validatorLibrary\StringValidator::lengthBigger($stringTest, 5);
+echo $validation = \RenduFP\validatorLibrary\StringValidator::lengthSmaller($stringTest, 87);
+echo $validation = \RenduFP\validatorLibrary\StringValidator::lengthBetween($stringTest, 1, 15);
 echo $validation = \RenduFP\validatorLibrary\StringValidator::noWhiteSpaceBeginEnd($stringTest);
 echo $validation = \RenduFP\validatorLibrary\StringValidator::noWhiteSpace($stringTest).PHP_EOL;
 
@@ -64,5 +61,6 @@ echo $validation = \RenduFP\validatorLibrary\DateTimeValidator::isSameDay($dateT
 echo $validation = \RenduFP\validatorLibrary\DateTimeValidator::isAfter($dateTest, new DateTime());
 echo $validation = \RenduFP\validatorLibrary\DateTimeValidator::isBefore($dateTest, new DateTime());
 echo $validation = \RenduFP\validatorLibrary\DateTimeValidator::isToday($dateTest);
-echo $validation = \RenduFP\validatorLibrary\DateTimeValidator::isAfterToday($dateTest, RenduFP\validatorLibrary\IntegerValidator::STRICT_INEQUALITY);
-echo $validation = \RenduFP\validatorLibrary\DateTimeValidator::isAfterToday($dateTest);
+echo $validation = \RenduFP\validatorLibrary\DateTimeValidator::isBeforeToday($dateTest);
+echo $validation = \RenduFP\validatorLibrary\DateTimeValidator::isAfterToday($dateTest, RenduFP\validatorLibrary\DateTimeValidator::STRICT_INEQUALITY);
+echo $validation = \RenduFP\validatorLibrary\DateTimeValidator::hasSameTimezone($dateTest, new DateTimeZone('Europe/Paris'));
