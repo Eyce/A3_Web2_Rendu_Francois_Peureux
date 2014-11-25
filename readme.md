@@ -13,6 +13,16 @@ This library validates several types of data :
 Validates an Integer, by performing the following tests :
 
 ###isEqual
+
+Tests equality between two Integers :
+
+```php
+//Tests if $intTests = 8
+\RenduFP\validatorLibrary\IntegerValidator::isEqual($intTest, 8)
+//Tests if $intTests = 0
+\RenduFP\validatorLibrary\IntegerValidator::isEqual($intTest)
+```
+
 ###isBiggerThan
 ###isSmallerThan
 ###isBetween
