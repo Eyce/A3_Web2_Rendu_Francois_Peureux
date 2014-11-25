@@ -25,7 +25,7 @@ Tests if given Integer is Equals to a Parameter.
 bool isEqual(int $intTest, [int $parameter = 0])
 ```
 
-**Example**
+**Examples**
 
 ```php
 //Tests if $intTest = 8
@@ -42,10 +42,10 @@ Tests if given Integer is Superior to a Parameter.
 **Syntax**
 
 ```php
-bool isBiggerThan(int $intTest, [int $parameter = 0], [int $strictness = STRICT_INEQUALITY])
+bool isBiggerThan(int $intTest, [int $parameter = 0], [int $strictness = self::STRICT_INEQUALITY])
 ```
 
-**Example**
+**Examples**
 
 ```php
 //Tests if $intTest > 8
@@ -66,10 +66,10 @@ Tests if given Integer is Inferior to a Parameter.
 **Syntax**
 
 ```php
-bool isSmallerThan(int $intTest, [int $parameter = 0], [int $strictness = STRICT_INEQUALITY])
+bool isSmallerThan(int $intTest, [int $parameter = 0], [int $strictness = self::STRICT_INEQUALITY])
 ```
 
-**Example**
+**Examples**
 
 ```php
 //Tests if $intTest < 8
@@ -90,10 +90,10 @@ Tests if given Integer is between two Parameters.
 **Syntax**
 
 ```php
-bool isBiggerThan(int $intTest, int $parameterMin, int $parameterMax, [int $strictness = STRICT_INEQUALITY])
+bool isBiggerThan(int $intTest, int $parameterMin, int $parameterMax, [int $strictness = self::STRICT_INEQUALITY])
 ```
 
-**Example**
+**Examples**
 
 ```php
 //Tests if $intTest is strictly between 1 and 10
@@ -132,18 +132,18 @@ Tests if a given String length is bigger than a Parameter.
 **Syntax**
 
 ```php
-bool lengthBigger(string $strValue, int $testValue, [int $strictness = STRICT_INEQUALITY])
+bool lengthBigger(string $strValue, int $testValue, [int $strictness = self::STRICT_INEQUALITY])
 ```
 
-**Example**
+**Examples**
 
 ```php
 //Tests if $stringTest length is strictly bigger than 10
 \RenduFP\validatorLibrary\StringValidator::lengthBigger($stringTest, 10)
-\RenduFP\validatorLibrary\StringValidator::lengthBigger($stringTest, 10, STRICT_INEQUALITY)
+\RenduFP\validatorLibrary\StringValidator::lengthBigger($stringTest, 10, RenduFP\validatorLibrary\StringValidator::STRICT_INEQUALITY)
 
 //Tests if $stringTest length is bigger or equals to 10
-\RenduFP\validatorLibrary\StringValidator::lengthBigger($stringTest, 10, NOT_STRICT_INEQUALITY)
+\RenduFP\validatorLibrary\StringValidator::lengthBigger($stringTest, 10, RenduFP\validatorLibrary\StringValidator::NOT_STRICT_INEQUALITY)
 ```
 
 ###lengthSmaller
@@ -153,18 +153,18 @@ Tests if a given String length is smaller than a Parameter.
 **Syntax**
 
 ```php
-bool lengthSmaller(string $strValue, int $testValue, [int $strictness = STRICT_INEQUALITY])
+bool lengthSmaller(string $strValue, int $testValue, [int $strictness = self::STRICT_INEQUALITY])
 ```
 
-**Example**
+**Examples**
 
 ```php
 //Tests if $stringTest length is strictly smaller than 10
 \RenduFP\validatorLibrary\StringValidator::lengthSmaller($stringTest, 10)
-\RenduFP\validatorLibrary\StringValidator::lengthSmaller($stringTest, 10, STRICT_INEQUALITY)
+\RenduFP\validatorLibrary\StringValidator::lengthSmaller($stringTest, 10, RenduFP\validatorLibrary\StringValidator::STRICT_INEQUALITY)
 
 //Tests if $stringTest length is smaller or equals to 10
-\RenduFP\validatorLibrary\StringValidator::lengthSmaller($stringTest, 10, NOT_STRICT_INEQUALITY)
+\RenduFP\validatorLibrary\StringValidator::lengthSmaller($stringTest, 10, RenduFP\validatorLibrary\StringValidator::NOT_STRICT_INEQUALITY)
 ```
 
 ###lengthBetween
@@ -174,18 +174,18 @@ Tests if a given String length is between two Parameters.
 **Syntax**
 
 ```php
-bool lengthBetween(string $strValue, int $testValueMin, int $testValueMax, [int $strictness = STRICT_INEQUALITY])
+bool lengthBetween(string $strValue, int $testValueMin, int $testValueMax, [int $strictness = self::STRICT_INEQUALITY])
 ```
 
-**Example**
+**Examples**
 
 ```php
 //Tests if $stringTest length is strictly between 1 and 10
 \RenduFP\validatorLibrary\StringValidator::lengthBetween($stringTest, 1, 10)
-\RenduFP\validatorLibrary\StringValidator::lengthBetween($stringTest, 1, 10, STRICT_INEQUALITY)
+\RenduFP\validatorLibrary\StringValidator::lengthBetween($stringTest, 1, 10, RenduFP\validatorLibrary\StringValidator::STRICT_INEQUALITY)
 
 //Tests if $stringTest length is between 1 and 10 included
-\RenduFP\validatorLibrary\StringValidator::lengthBetween($stringTest, 1, 10, NOT_STRICT_INEQUALITY)
+\RenduFP\validatorLibrary\StringValidator::lengthBetween($stringTest, 1, 10, RenduFP\validatorLibrary\StringValidator::NOT_STRICT_INEQUALITY)
 ```
 
 ###noWhiteSpaceBeginEnd
@@ -201,6 +201,7 @@ bool noWhiteSpaceBeginEnd(string $stringTest)
 **Example**
 
 ```php
+//Tests if $stringTest has no white spaces at the beginning or the end
 \RenduFP\validatorLibrary\StringValidator::noWhiteSpaceBeginEnd($stringTest)
 ```
 
@@ -217,6 +218,7 @@ bool noWhiteSpace(string $stringTest)
 **Example**
 
 ```php
+//Tests if $stringTest has no white spaces
 \RenduFP\validatorLibrary\StringValidator::noWhiteSpace($stringTest)
 ```
 
@@ -226,7 +228,7 @@ Validates a Boolean, by performing the following tests :
 
 ###isTrue
 
-Tests if the boolean is True.
+Tests if the Boolean is True.
 
 **Syntax**
 
@@ -237,12 +239,13 @@ bool isTrue($booleanTest)
 **Example**
 
 ```php
+//Tests if $booleanTest is true
 \RenduFP\validatorLibrary\BooleanValidator::isTrue($booleanTest)
 ```
 
 ###isFalse
 
-Tests if the boolean is False.
+Tests if the Boolean is False.
 
 **Syntax**
 
@@ -253,6 +256,7 @@ bool isFalse($booleanTest)
 **Example**
 
 ```php
+//Tests if $booleanTest is false
 \RenduFP\validatorLibrary\BooleanValidator::isFalse($booleanTest)
 ```
 
@@ -261,12 +265,132 @@ bool isFalse($booleanTest)
 Validates an Array, by performing the following tests :
 
 ###isEmpty
+
+Tests if an Array is Empty.
+
+**Syntax**
+
+```php
+bool isEmpty(array $arrayTest)
+```
+
+**Example**
+
+```php
+//Tests if $arrayTest is empty
+\RenduFP\validatorLibrary\ArrayValidator::isEmpty($arrayTest);
+```
+
 ###hasSameElementNumber
+
+Tests if an Array has X elements, where X is a given Parameter.
+
+**Syntax**
+
+```php
+bool hasSameElementNumber(array $arrayValue, int $elementNumber)
+```
+
+**Example**
+
+```php
+//Tests if $arrayTest contains 3 elements
+\RenduFP\validatorLibrary\ArrayValidator::hasSameElementNumber($arrayTest, 3)
+```
+
 ###hasMoreElements
+
+Tests if an Array has more than X elements, where X is a given Parameter.
+
+**Syntax**
+
+```php
+bool hasMoreElements(array $arrayValue, int $elementNumber, [int $strictness = self::STRICT_INEQUALITY])
+```
+
+**Examples**
+
+```php
+//Tests if $arrayTest has strictly more than 3 elements
+\RenduFP\validatorLibrary\ArrayValidator::hasMoreElements($arrayTest, 3)
+\RenduFP\validatorLibrary\ArrayValidator::hasMoreElements($arrayTest, 3, RenduFP\validatorLibrary\ArrayValidator::STRICT_INEQUALITY);
+//Tests if $arrayTest has 3 or more elements
+\RenduFP\validatorLibrary\ArrayValidator::hasMoreElements($arrayTest, 3, RenduFP\validatorLibrary\ArrayValidator::NOT_STRICT_INEQUALITY);
+```
+
 ###hasLessElements
+
+Tests if an Array has less than X elements, where X is a given Parameter.
+
+**Syntax**
+
+```php
+bool hasLessElements(array $arrayValue, int $elementNumber, [int $strictness = self::STRICT_INEQUALITY])
+```
+
+**Examples**
+
+```php
+//Tests if $arrayTest has strictly less than 3 elements
+\RenduFP\validatorLibrary\ArrayValidator::hasLessElements($arrayTest, 3)
+\RenduFP\validatorLibrary\ArrayValidator::hasLessElements($arrayTest, 3, RenduFP\validatorLibrary\ArrayValidator::STRICT_INEQUALITY);
+//Tests if $arrayTest has 3 or less elements
+\RenduFP\validatorLibrary\ArrayValidator::hasLessElements($arrayTest, 3, RenduFP\validatorLibrary\ArrayValidator::NOT_STRICT_INEQUALITY);
+```
+
 ###elementNumberBetween
+
+Tests if an Array has a number of elements between two given Parameters.
+
+**Syntax**
+
+```php
+bool elementNumberBetween(array $arrayValue, int $elementNumberMin, int $elementNumberMax, [int $strictness = self::STRICT_INEQUALITY])
+```
+
+**Examples**
+
+```php
+//Tests if $arrayTest has strictly between 1 and 10 elements
+\RenduFP\validatorLibrary\ArrayValidator::lengthBetween($arrayTest, 1, 10)
+\RenduFP\validatorLibrary\ArrayValidator::lengthBetween($arrayTest, 1, 10, RenduFP\validatorLibrary\ArrayValidator::STRICT_INEQUALITY)
+//Tests if $stringTest has between 1 and 10 elements included
+\RenduFP\validatorLibrary\ArrayValidator::lengthBetween($arrayTest, 1, 10, RenduFP\validatorLibrary\ArrayValidator::NOT_STRICT_INEQUALITY)
+```
+
 ###containsKey
+
+Tests if an Array contains a given Key.
+
+**Syntax**
+
+```php
+bool containsKey(array $arrayValue, mixed $key)
+```
+
+**Examples**
+
+```php
+//Tests if $arrayTest contains the key 4
+\RenduFP\validatorLibrary\ArrayValidator::containsKey($arrayTest, 4)
+```
+
 ###containsValue
+
+Tests if an Array contains a given Value.
+
+**Syntax**
+
+```php
+bool containsValue(array $arrayValue, mixed $value)
+```
+
+**Examples**
+
+```php
+//Tests if $arrayTest contains the value "foo"
+\RenduFP\validatorLibrary\ArrayValidator::containsKey($arrayTest, "foo")
+```
 
 ##DateTime Validation
 
