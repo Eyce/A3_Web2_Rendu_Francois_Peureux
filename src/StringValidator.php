@@ -9,16 +9,29 @@
 namespace RenduFP\validatorLibrary;
 
 
+/**
+ * Class StringValidator
+ * @package RenduFP\validatorLibrary
+ */
 class StringValidator {
 
     const STRICT_INEQUALITY     = 0;
     const NOT_STRICT_INEQUALITY = 1;
 
+    /**
+     * Constructor
+     */
     public function __construct()
     {
 
     }
 
+    /**
+     * @param string $strValue
+     * @param int $testValue
+     *
+     * @return string
+     */
     public static function strLengthEquals($strValue, $testValue)
     {
         $strValueLength = mb_strlen($strValue);
@@ -29,6 +42,13 @@ class StringValidator {
             return "False";
     }
 
+    /**
+     * @param string $strValue
+     * @param int $testValue
+     * @param int $strictness
+     *
+     * @return string
+     */
     public static function strLengthBigger($strValue, $testValue, $strictness = self::STRICT_INEQUALITY)
     {
         if ($strictness == self::STRICT_INEQUALITY)
@@ -47,6 +67,13 @@ class StringValidator {
         }
     }
 
+    /**
+     * @param string $strValue
+     * @param int $testValue
+     * @param int $strictness
+     *
+     * @return string
+     */
     public static function strLengthSmaller($strValue, $testValue, $strictness = self::STRICT_INEQUALITY)
     {
         if ($strictness == self::STRICT_INEQUALITY)
@@ -65,6 +92,14 @@ class StringValidator {
         }
     }
 
+    /**
+     * @param string $strValue
+     * @param int $testValueMin
+     * @param int $testValueMax
+     * @param int $strictness
+     *
+     * @return string
+     */
     public static function strLengthBetween($strValue, $testValueMin, $testValueMax, $strictness = self::STRICT_INEQUALITY)
     {
         if ($strictness == self::STRICT_INEQUALITY)
@@ -83,6 +118,11 @@ class StringValidator {
         }
     }
 
+    /**
+     * @param string $strValue
+     *
+     * @return string
+     */
     public static function noWhiteSpaceBeginEnd($strValue)
     {
         $strValueArray = str_split($strValue);
@@ -94,6 +134,11 @@ class StringValidator {
             return "False";
     }
 
+    /**
+     * @param string $strValue
+     *
+     * @return string
+     */
     public static function noWhiteSpace($strValue)
     {
         $strValueArray = str_split($strValue);

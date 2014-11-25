@@ -1,7 +1,9 @@
 <?php
+
 /*
  * @author François Peureux
  */
+
 require __DIR__.'/vendor/autoload.php';
 
 // VARIABLE DEFINITION
@@ -18,7 +20,6 @@ $arrayTest = array
                         5 => "Value 5"
                     );
 $dateTest = new DateTime("2012-07-08 11:14:15", new DateTimeZone('Europe/Paris'));
-var_dump($dateTest);
 
 
 // INTEGER VALIDATION

@@ -9,16 +9,28 @@
 namespace RenduFP\validatorLibrary;
 
 
+/**
+ * Class ArrayValidator
+ * @package RenduFP\validatorLibrary
+ */
 class ArrayValidator {
 
     const STRICT_INEQUALITY     = 0;
     const NOT_STRICT_INEQUALITY = 1;
 
+    /**
+     * Constructor
+     */
     public function __construct()
     {
 
     }
 
+    /**
+     * @param array $arrayValue
+     *
+     * @return string
+     */
     public static function isEmpty($arrayValue)
     {
         if (empty($arrayValue))
@@ -27,6 +39,12 @@ class ArrayValidator {
             return "False";
     }
 
+    /**
+     * @param array $arrayValue
+     * @param int $elementNumber
+     *
+     * @return string
+     */
     public static function hasSameElementNumber($arrayValue, $elementNumber)
     {
         $arrayLength = count($arrayValue);
@@ -37,6 +55,13 @@ class ArrayValidator {
             return "False";
     }
 
+    /**
+     * @param array $arrayValue
+     * @param int $elementNumber
+     * @param int $strictness
+     *
+     * @return string
+     */
     public static function hasMoreElements($arrayValue, $elementNumber, $strictness = self::STRICT_INEQUALITY)
     {
         $arrayLength = count($arrayValue);
@@ -57,6 +82,13 @@ class ArrayValidator {
         }
     }
 
+    /**
+     * @param array $arrayValue
+     * @param int $elementNumberTest
+     * @param int $strictness
+     *
+     * @return string
+     */
     public static function hasLessElements($arrayValue, $elementNumberTest, $strictness = self::STRICT_INEQUALITY)
     {
         $arrayLength = count($arrayValue);
@@ -77,6 +109,14 @@ class ArrayValidator {
         }
     }
 
+    /**
+     * @param array $arrayValue
+     * @param int $elementNumberMin
+     * @param int $elementNumberMax
+     * @param int $strictness
+     *
+     * @return string
+     */
     public static function elementNumberBetween($arrayValue, $elementNumberMin, $elementNumberMax, $strictness = self::STRICT_INEQUALITY)
     {
         $arrayLength = count($arrayValue);
@@ -97,6 +137,12 @@ class ArrayValidator {
         }
     }
 
+    /**
+     * @param array $arrayValue
+     * @param mixed $key
+     *
+     * @return string
+     */
     public static function containsKey($arrayValue, $key)
     {
         if(array_key_exists($key,$arrayValue))
@@ -105,6 +151,12 @@ class ArrayValidator {
             return "False";
     }
 
+    /**
+     * @param array $arrayValue
+     * @param mixed $value
+     *
+     * @return string
+     */
     public static function containsValue($arrayValue, $value)
     {
         if(in_array($value, $arrayValue))
