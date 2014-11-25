@@ -97,16 +97,10 @@ class StringValidator {
     public static function noWhiteSpace($strValue)
     {
         $strValueArray = str_split($strValue);
-        $strValueArrayLength = count($strValueArray);
 
-        $status = "True";
-
-        for($i = 0; $i < $strValueArrayLength; $i++)
-        {
-            if($strValueArray[$i] = " ")
-                $status = "False";
-        }
-
-        return $status;
+        if(in_array(" ",$strValueArray))
+            return "False";
+        else
+            return "True";
     }
 } 
