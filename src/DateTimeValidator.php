@@ -70,7 +70,7 @@ class DateTimeValidator {
     {
         if (!is_a($dateValue, "\DateTime"))
             throw new Exception("Item must be DateTime");
-        if (!is_int($testMonth))
+        if (!is_int($testDay))
             throw new Exception("Item must be string");
 
         $dateValueDay = $dateValue->format('D');
