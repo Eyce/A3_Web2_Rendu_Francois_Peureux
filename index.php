@@ -56,4 +56,8 @@ echo $validation = \RenduFP\validatorLibrary\ArrayValidator::containsValue($arra
 
 // DATETIME VALIDATION
 
-echo $validation = \RenduFP\validatorLibrary\DateTimeValidator::isYear($dateTest, 2014);
+echo $validation = \RenduFP\validatorLibrary\DateTimeValidator::isYear($dateTest, 2012);
+echo $validation = \RenduFP\validatorLibrary\DateTimeValidator::isMonth($dateTest, "Jul");
+echo $validation = \RenduFP\validatorLibrary\DateTimeValidator::isDay($dateTest, "Sun");
+echo $validation = \RenduFP\validatorLibrary\DateTimeValidator::isAfter($dateTest, new DateTime());
+echo $validation = \RenduFP\validatorLibrary\DateTimeValidator::isBefore($dateTest, new DateTime());
