@@ -5,35 +5,58 @@
 require __DIR__.'/vendor/autoload.php';
 
 /*
+ * Variable definition
+ */
+$intTest = 5 ;
+$stringTest = "Hello world !";
+$booleanTest = true;
+$arrayTest = array
+                    (
+                        1 => "Value 1",
+                        2 => "Value 2",
+                        3 => "Value 3",
+                        4 => "Value 4",
+                        5 => "Value 5"
+                    );
+
+
+/*
  * Integer Validation
  */
 
-echo $validation = \RenduFP\validatorLibrary\IntegerValidator::equals(8, 8);
-echo $validation = \RenduFP\validatorLibrary\IntegerValidator::biggerThan(5, 8);
-echo $validation = \RenduFP\validatorLibrary\IntegerValidator::smallerThan(5, 8);
-echo $validation = \RenduFP\validatorLibrary\IntegerValidator::between(5, 1, 10);
-echo $validation = \RenduFP\validatorLibrary\IntegerValidator::isPositive(-5);
-echo $validation = \RenduFP\validatorLibrary\IntegerValidator::isNegative(0,RenduFP\validatorLibrary\IntegerValidator::NOT_STRICT_INEQUALITY).PHP_EOL;
+echo $validation = \RenduFP\validatorLibrary\IntegerValidator::equals($intTest, 8);
+echo $validation = \RenduFP\validatorLibrary\IntegerValidator::biggerThan($intTest, 8);
+echo $validation = \RenduFP\validatorLibrary\IntegerValidator::smallerThan($intTest, 8);
+echo $validation = \RenduFP\validatorLibrary\IntegerValidator::between($intTest, 1, 10);
+echo $validation = \RenduFP\validatorLibrary\IntegerValidator::isPositive($intTest);
+echo $validation = \RenduFP\validatorLibrary\IntegerValidator::isNegative($intTest,RenduFP\validatorLibrary\IntegerValidator::NOT_STRICT_INEQUALITY).PHP_EOL;
 
 /*
  *  String Validation
  */
 
-echo $validation = \RenduFP\validatorLibrary\StringValidator::strLengthEquals("Hello world", 10);
-echo $validation = \RenduFP\validatorLibrary\StringValidator::strLengthBigger("Hello world", 5);
-echo $validation = \RenduFP\validatorLibrary\StringValidator::strLengthSmaller("Hello world", 87);
-echo $validation = \RenduFP\validatorLibrary\StringValidator::strLengthBetween("Hello world", 1, 15);
-echo $validation = \RenduFP\validatorLibrary\StringValidator::noWhiteSpaceBeginEnd("Hello world ");
-echo $validation = \RenduFP\validatorLibrary\StringValidator::noWhiteSpace("Hello world").PHP_EOL;
+echo $validation = \RenduFP\validatorLibrary\StringValidator::strLengthEquals($stringTest, 10);
+echo $validation = \RenduFP\validatorLibrary\StringValidator::strLengthBigger($stringTest, 5);
+echo $validation = \RenduFP\validatorLibrary\StringValidator::strLengthSmaller($stringTest, 87);
+echo $validation = \RenduFP\validatorLibrary\StringValidator::strLengthBetween($stringTest, 1, 15);
+echo $validation = \RenduFP\validatorLibrary\StringValidator::noWhiteSpaceBeginEnd($stringTest);
+echo $validation = \RenduFP\validatorLibrary\StringValidator::noWhiteSpace($stringTest).PHP_EOL;
 
 /*
  * Boolean Validation
  */
 
-echo $validation = \RenduFP\validatorLibrary\BooleanValidator::isTrue(true);
-echo $validation = \RenduFP\validatorLibrary\BooleanValidator::isFalse(true).PHP_EOL;
+echo $validation = \RenduFP\validatorLibrary\BooleanValidator::isTrue($booleanTest);
+echo $validation = \RenduFP\validatorLibrary\BooleanValidator::isFalse($booleanTest).PHP_EOL;
 
 /*
  * Array Validation
  */
 
+echo $validation = \RenduFP\validatorLibrary\ArrayValidator::isEmpty($arrayTest);
+echo $validation = \RenduFP\validatorLibrary\ArrayValidator::hasSameElementNumber($arrayTest, 3);
+echo $validation = \RenduFP\validatorLibrary\ArrayValidator::hasMoreElements($arrayTest, 3);
+echo $validation = \RenduFP\validatorLibrary\ArrayValidator::hasLessElements($arrayTest, 3);
+echo $validation = \RenduFP\validatorLibrary\ArrayValidator::elementNumberBetween($arrayTest, 3, 5);
+echo $validation = \RenduFP\validatorLibrary\ArrayValidator::containsKey($arrayTest, 4);
+echo $validation = \RenduFP\validatorLibrary\ArrayValidator::containsValue($arrayTest,"Value 3").PHP_EOL;
