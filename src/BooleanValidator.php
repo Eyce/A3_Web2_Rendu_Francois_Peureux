@@ -31,14 +31,14 @@ class BooleanValidator {
      *
      * @return bool
      */
-    public static function isTrue($booleanIn)
+    public static function isTrue($booleanIn1)
     {
-        if (!isset($booleanIn))
+        if (!isset($booleanIn1))
             throw new Exception("Item to validate doesn't exist (boolean)");
-        if (!is_bool($booleanIn))
+        if (!is_bool($booleanIn1))
             throw new Exception("Item to validate has the wrong type (must be boolean)");
 
-        if($booleanIn)
+        if($booleanIn1)
             return true;
         else
             return false;
@@ -52,14 +52,14 @@ class BooleanValidator {
      *
      * @return bool
      */
-    public static function isFalse($booleanIn)
+    public static function isFalse($booleanIn2)
     {
-        if (!isset($booleanIn))
+        if (!isset($booleanIn2))
             throw new Exception("Item to validate doesn't exist (boolean)");
-        if (!is_bool($booleanIn))
+        if (!is_bool($booleanIn2))
             throw new Exception("Item to validate has the wrong type (must be boolean)");
 
-        if(!$booleanIn)
+        if(!$booleanIn2)
             return true;
         else
             return false;
