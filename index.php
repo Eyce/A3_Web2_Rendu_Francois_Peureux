@@ -26,7 +26,7 @@ $dateTest = new DateTime("2012-07-08 11:14:15", new DateTimeZone('Europe/Paris')
 echo $validation = \RenduFP\validatorLibrary\IntegerValidator::isEqual($intTest, 8);
 echo $validation = \RenduFP\validatorLibrary\IntegerValidator::isBiggerThan($intTest, 8);
 echo $validation = \RenduFP\validatorLibrary\IntegerValidator::isSmallerThan($intTest, 8);
-echo $validation = \RenduFP\validatorLibrary\IntegerValidator::isBetween($intTest, 1, 10);
+echo $validation = \RenduFP\validatorLibrary\IntegerValidator::isBetween($intTest, 1, 10).'<br />';
 
 // STRING VALIDATION
 
@@ -35,12 +35,12 @@ echo $validation = \RenduFP\validatorLibrary\StringValidator::lengthBigger($stri
 echo $validation = \RenduFP\validatorLibrary\StringValidator::lengthSmaller($stringTest, 87);
 echo $validation = \RenduFP\validatorLibrary\StringValidator::lengthBetween($stringTest, 1, 15);
 echo $validation = \RenduFP\validatorLibrary\StringValidator::noWhiteSpaceBeginEnd($stringTest);
-echo $validation = \RenduFP\validatorLibrary\StringValidator::noWhiteSpace($stringTest).PHP_EOL;
+echo $validation = \RenduFP\validatorLibrary\StringValidator::noWhiteSpace($stringTest).'<br />';
 
 // BOOLEAN VALIDATION
 
 echo $validation = \RenduFP\validatorLibrary\BooleanValidator::isTrue($booleanTest);
-echo $validation = \RenduFP\validatorLibrary\BooleanValidator::isFalse($booleanTest).PHP_EOL;
+echo $validation = \RenduFP\validatorLibrary\BooleanValidator::isFalse($booleanTest).'<br />';
 
 // ARRAY VALIDATION
 
@@ -50,7 +50,7 @@ echo $validation = \RenduFP\validatorLibrary\ArrayValidator::hasMoreElements($ar
 echo $validation = \RenduFP\validatorLibrary\ArrayValidator::hasLessElements($arrayTest, 3);
 echo $validation = \RenduFP\validatorLibrary\ArrayValidator::elementNumberBetween($arrayTest, 3, 5);
 echo $validation = \RenduFP\validatorLibrary\ArrayValidator::containsKey($arrayTest, 4);
-echo $validation = \RenduFP\validatorLibrary\ArrayValidator::containsValue($arrayTest,"Value 3").PHP_EOL;
+echo $validation = \RenduFP\validatorLibrary\ArrayValidator::containsValue($arrayTest,"Value 3").'<br />';
 
 // DATETIME VALIDATION
 
@@ -63,4 +63,4 @@ echo $validation = \RenduFP\validatorLibrary\DateTimeValidator::isBefore($dateTe
 echo $validation = \RenduFP\validatorLibrary\DateTimeValidator::isToday($dateTest);
 echo $validation = \RenduFP\validatorLibrary\DateTimeValidator::isBeforeToday($dateTest);
 echo $validation = \RenduFP\validatorLibrary\DateTimeValidator::isAfterToday($dateTest, RenduFP\validatorLibrary\DateTimeValidator::STRICT_INEQUALITY);
-echo $validation = \RenduFP\validatorLibrary\DateTimeValidator::hasSameTimezone($dateTest, new DateTimeZone('Europe/Paris'));
+echo $validation = \RenduFP\validatorLibrary\DateTimeValidator::hasSameTimezone($dateTest, new DateTimeZone('Europe/Paris')).'<br />';

@@ -24,28 +24,44 @@ class BooleanValidator {
     }
 
     /**
-     * @param boolean $booleanIn
+     * @param bool $booleanIn
      *
-     * @return string
+     * @throws Exception Item to validate doesn't exist (boolean)
+     * @throws Exception Item to validate has the wrong type (must be boolean)
+     *
+     * @return bool
      */
     public static function isTrue($booleanIn)
     {
+        if (!isset($booleanIn))
+            throw new Exception("Item to validate doesn't exist (boolean)");
+        if (!is_bool($booleanIn))
+            throw new Exception("Item to validate has the wrong type (must be boolean)");
+
         if($booleanIn)
-            return "True";
+            return true;
         else
-            return "False";
+            return false;
     }
 
     /**
-     * @param boolean $booleanIn
+     * @param bool $booleanIn
      *
-     * @return string
+     * @throws Exception Item to validate doesn't exist (boolean)
+     * @throws Exception Item to validate has the wrong type (must be boolean)
+     *
+     * @return bool
      */
     public static function isFalse($booleanIn)
     {
+        if (!isset($booleanIn))
+            throw new Exception("Item to validate doesn't exist (boolean)");
+        if (!is_bool($booleanIn))
+            throw new Exception("Item to validate has the wrong type (must be boolean)");
+
         if(!$booleanIn)
-            return "True";
+            return true;
         else
-            return "False";
+            return false;
     }
 } 
