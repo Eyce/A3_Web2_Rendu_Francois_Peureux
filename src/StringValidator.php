@@ -23,7 +23,7 @@ class StringValidator {
     {
         $strValueLength = mb_strlen($strValue);
 
-        if ($strValueLength = $testValue)
+        if ($strValueLength == $testValue)
             return "True";
         else
             return "False";
@@ -31,14 +31,14 @@ class StringValidator {
 
     public static function strLengthBigger($strValue, $testValue, $strictness = self::STRICT_INEQUALITY)
     {
-        if ($strictness = self::STRICT_INEQUALITY)
+        if ($strictness == self::STRICT_INEQUALITY)
         {
             if (mb_strlen($strValue) > $testValue)
                 return "True";
             else
                 return "False";
         }
-        else if ($strictness = self::NOT_STRICT_INEQUALITY)
+        else if ($strictness == self::NOT_STRICT_INEQUALITY)
         {
             if (mb_strlen($strValue) >= $testValue)
                 return "True";
@@ -49,14 +49,14 @@ class StringValidator {
 
     public static function strLengthSmaller($strValue, $testValue, $strictness = self::STRICT_INEQUALITY)
     {
-        if ($strictness = self::STRICT_INEQUALITY)
+        if ($strictness == self::STRICT_INEQUALITY)
         {
             if (mb_strlen($strValue) < $testValue)
                 return "True";
             else
                 return "False";
         }
-        else if ($strictness = self::NOT_STRICT_INEQUALITY)
+        else if ($strictness == self::NOT_STRICT_INEQUALITY)
         {
             if (mb_strlen($strValue) <= $testValue)
                 return "True";
@@ -67,14 +67,14 @@ class StringValidator {
 
     public static function strLengthBetween($strValue, $testValueMin, $testValueMax, $strictness = self::STRICT_INEQUALITY)
     {
-        if ($strictness = self::STRICT_INEQUALITY)
+        if ($strictness == self::STRICT_INEQUALITY)
         {
             if (mb_strlen($strValue) > $testValueMin  && mb_strlen($strValue) < $testValueMax)
                 return "True";
             else
                 return "False";
         }
-        else if ($strictness = self::NOT_STRICT_INEQUALITY)
+        else if ($strictness == self::NOT_STRICT_INEQUALITY)
         {
             if (mb_strlen($strValue) >= $testValueMin  && mb_strlen($strValue) <= $testValueMax)
                 return "True";

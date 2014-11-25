@@ -31,7 +31,7 @@ class ArrayValidator {
     {
         $arrayLength = count($arrayValue);
 
-        if ($arrayLength = $elementNumber)
+        if ($arrayLength == $elementNumber)
             return "True";
         else
             return "False";
@@ -41,14 +41,14 @@ class ArrayValidator {
     {
         $arrayLength = count($arrayValue);
 
-        if($strictness = self::STRICT_INEQUALITY)
+        if($strictness == self::STRICT_INEQUALITY)
         {
             if ($arrayLength > $elementNumber)
                 return "True";
             else
                 return "False";
         }
-        else if ($strictness = self::NOT_STRICT_INEQUALITY)
+        else if ($strictness == self::NOT_STRICT_INEQUALITY)
         {
             if ($arrayLength >= $elementNumber)
                 return "True";
@@ -61,14 +61,14 @@ class ArrayValidator {
     {
         $arrayLength = count($arrayValue);
 
-        if($strictness = self::STRICT_INEQUALITY)
+        if($strictness == self::STRICT_INEQUALITY)
         {
             if ($arrayLength < $elementNumberTest)
                 return "True";
             else
                 return "False";
         }
-        else if ($strictness = self::NOT_STRICT_INEQUALITY)
+        else if ($strictness == self::NOT_STRICT_INEQUALITY)
         {
             if ($arrayLength <= $elementNumberTest)
                 return "True";
@@ -81,14 +81,14 @@ class ArrayValidator {
     {
         $arrayLength = count($arrayValue);
 
-        if($strictness = self::STRICT_INEQUALITY)
+        if($strictness == self::STRICT_INEQUALITY)
         {
             if ($arrayLength > $elementNumberMin && $arrayLength < $elementNumberMax)
                 return "True";
             else
                 return "False";
         }
-        else if ($strictness = self::NOT_STRICT_INEQUALITY)
+        else if ($strictness == self::NOT_STRICT_INEQUALITY)
         {
             if ($arrayLength >= $elementNumberMin && $arrayLength <= $elementNumberMax)
                 return "True";
