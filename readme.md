@@ -17,7 +17,15 @@ Validates an Integer, by performing the following tests :
 
 ###isEqual
 
-Tests if given Integer is Equals to a Parameter :
+Tests if given Integer is Equals to a Parameter.
+
+**Syntax**
+
+```php
+bool isEqual(int $intTest, [int $parameter = 0])
+```
+
+**Example**
 
 ```php
 //Tests if $intTest = 8
@@ -29,7 +37,15 @@ Tests if given Integer is Equals to a Parameter :
 
 ###isBiggerThan
 
-Tests if given Integer is Superior to a Parameter :
+Tests if given Integer is Superior to a Parameter.
+
+**Syntax**
+
+```php
+bool isBiggerThan(int $intTest, [int $parameter = 0], [int $strictness = STRICT_INEQUALITY])
+```
+
+**Example**
 
 ```php
 //Tests if $intTest > 8
@@ -45,7 +61,15 @@ Tests if given Integer is Superior to a Parameter :
 
 ###isSmallerThan
 
-Tests if given Integer is Inferior to a Parameter :
+Tests if given Integer is Inferior to a Parameter.
+
+**Syntax**
+
+```php
+bool isSmallerThan(int $intTest, [int $parameter = 0], [int $strictness = STRICT_INEQUALITY])
+```
+
+**Example**
 
 ```php
 //Tests if $intTest < 8
@@ -61,7 +85,15 @@ Tests if given Integer is Inferior to a Parameter :
 
 ###isBetween
 
-Tests if given Integer is between two Parameters :
+Tests if given Integer is between two Parameters.
+
+**Syntax**
+
+```php
+bool isBiggerThan(int $intTest, int $parameterMin, int $parameterMax, [int $strictness = STRICT_INEQUALITY])
+```
+
+**Example**
 
 ```php
 //Tests if $intTest is strictly between 1 and 10
@@ -78,20 +110,93 @@ Validates a String, by performing the following tests :
 
 ###lengthEquals
 
-Tests if a given String length is equals to a Parameter :
+Tests if a given String length is equals to a Parameter.
+
+**Example**
+
+```php
+```
 
 ###lengthBigger
+
+Tests if a given String length is bigger than a Parameter.
+
+**Example**
+
+```php
+```
+
 ###lengthSmaller
+
+Tests if a given String length is smaller than a Parameter.
+
+**Example**
+
+```php
+```
+
 ###lengthBetween
+
+Tests if a given String length is between two Parameters.
+
+**Example**
+
+```php
+```
+
 ###noWhiteSpaceBeginEnd
+
+Tests if a given String has neither a white space at the beginning nor at the end.
+
+**Example**
+
+```php
+```
+
 ###noWhiteSpace
+
+Tests if a given String has no white space in it.
+
+**Example**
+
+```php
+```
 
 ##Boolean Validation
 
 Validates a Boolean, by performing the following tests :
 
 ###isTrue
+
+Tests if the boolean is True.
+
+**Syntax**
+
+```php
+bool isTrue($booleanTest)
+```
+
+**Example**
+
+```php
+\RenduFP\validatorLibrary\BooleanValidator::isTrue($booleanTest)
+```
+
 ###isFalse
+
+Tests if the boolean is False.
+
+**Syntax**
+
+```php
+bool isFalse($booleanTest)
+```
+
+**Example**
+
+```php
+\RenduFP\validatorLibrary\BooleanValidator::isFalse($booleanTest)
+```
 
 ##Array Validation
 
